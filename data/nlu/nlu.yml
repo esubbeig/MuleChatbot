@@ -169,6 +169,19 @@ nlu:
     - thanks for your information
     - thanks f
 
+- intent: enroll
+  examples: |
+    - i wanted to enroll in to the course
+    - how to enroll in the course
+    - enroll me in 
+    - enroll me in to the course
+    - register me in the ms
+    - enroll
+    - enrollment
+    - enrolling
+    - can you enroll me into the course
+    - i would like to register into the course
+
 # - intent: mood_great
 #   examples: |
 #     - perfect
@@ -359,27 +372,49 @@ nlu:
     - academic courses do you provide
     - what courses are avalible in university of central missouri
 
+- synonym: undergraduate
+  examples: |
+    - undergraduates
+    - ugs
+    - ugc
+    - ug
+    - udergraduate programs
+    - undergraduate studies
+    - undergraduate student courses
+    - undergraduate degree
+
+- synonym: graduate
+  examples: |
+    - graduate
+    - graduates
+    - graduate programs
+    - graduate student courses
+    - graduate studies
+    - graduate degree
+    - graduate courses
+
+
 - intent: undergraduate_courses
   examples: |
-    - what are the couses available for undergraduates
-    - udergraduate programs
-    - which courses are offered by ucm for undergraduate 
-    - undergraduate studies
-    - courses for undergraduate students
-    - undergraduate student courses
-    - undergraduate students
-    - tell me what programs/courses do you have for undergraduates
+    - what are the couses available for [undergraduates](degree_category)
+    - [udergraduate programs](degree_category)
+    - which courses are offered by ucm for [undergraduate](degree_category)
+    - [undergraduate studies](degree_category)
+    - courses for [undergraduate students](degree_category)
+    - [undergraduate student courses](degree_category)
+    - [undergraduate students](degree_category)
+    - tell me what programs/courses do you have for [undergraduates](degree_category)
 
 - intent: graduate_courses
   examples: |
-    - what are the couses available for graduates
-    - graduate programs
-    - which courses are offered by ucm for graduate 
-    - graduate studies
-    - courses for graduate students
-    - graduate student courses
-    - graduate students
-    - tell me what programs/courses do you have for graduates
+    - what are the couses available for [graduates](degree_category)
+    - [graduate programs](degree_category)
+    - which courses are offered by ucm for [graduate](degree_category)
+    - [graduate studies](degree_category)
+    - courses for [graduate students](degree_category)
+    - [graduate student courses](degree_category)
+    - [graduate students](degree_category)
+    - tell me what programs/courses do you have for [graduates](degree_category)
 
 - intent: ms_programs
   examples: |

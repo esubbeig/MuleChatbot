@@ -29,3 +29,20 @@ rules:
   - intent: nlu_fallback
   - action: action_two_stage_fallback
   - active_loop: action_two_stage_fallback
+
+
+- rule: Activate Enrollment form
+  steps:
+  - intent: enroll
+  - action: enrollment_form
+  - active_loop: enrollment_form
+
+- rule: Submit Enrollment form
+  condition:
+  - active_loop: enrollment_form
+  steps:
+  - action: enrollment_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_make_enrollment

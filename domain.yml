@@ -5,10 +5,13 @@ intents:
   - goodbye
   - affirm
   - deny
-  # - mood_great
-  # - mood_unhappy
   - bot_challenge
+  - thank
   
+  - enroll
+  - full_name
+  - email
+  - gender
 
   - about_ucm
   - campus_details
@@ -40,12 +43,72 @@ intents:
   - computer_science
   - cyber_sec_ia
 
+entities:
+  - full_name
+  - email
+  - gender
+  - degree_category
+  # - mobile
+  # - course_name
+  # - intake
+  # - dob
 
+slots:
+  full_name:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: full_name
+
+  email:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: email
+
+  gender:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: gender
+  
+  degree_category:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: degree_category
+
+forms:
+  enrollment_form:
+    required_slots:
+      - full_name
+      - email
+      - gender
+      - degree_category
 
 actions:
   - action_default_fallback
+  - action_make_enrollment
 
 responses:
+
+  utter_ask_full_name:
+  - text: What is your Full Name ?
+
+  utter_ask_email:
+  - text: What is your email address ?
+
+  utter_ask_gender:
+  - text: What is your gender ?
+
+  utter_ask_degree_category:
+  - text: Which degree (graduate/undergraduate) you are looking for ? 
+  
+
   # utter_ask_feedback:
   # - buttons:
   #   # - payload: '/feedback{{"feedback_value": "positive"}}'
@@ -222,16 +285,6 @@ responses:
   - text: "Hey! How can i help you today?"
   - text: "what can i assist you?"
   - text: "Hello! What are you looking for?"
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
 
   utter_goodbye:
   - text: "Bye"

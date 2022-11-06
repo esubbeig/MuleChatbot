@@ -1,0 +1,20 @@
+{
+  "man": "male",
+  "boy": "male",
+  "masculine": "male",
+  "he": "male",
+  "him": "male",
+  "guy": "male",
+  "gent": "male",
+  "gentleman": "male",
+  "mr": "male",
+  "lady": "female",
+  "woman": "female",
+  "girl": "female",
+  "gentlewoman": "female",
+  "madam": "female",
+  "miss": "female",
+  "ms": "female",
+  "mrs": "female",
+  "feminine": "female"
+}

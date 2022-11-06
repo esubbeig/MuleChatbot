@@ -41,19 +41,41 @@ class ActionDefaultFallback(Action):
         dispatcher: CollectingDispatcher,
         tracker: Tracker,
         domain: Dict[Text, Any],
-    ) -> List[Dict[Text, Any]]:
+        ) -> List[Dict[Text, Any]]:
 
         # tell the user they are being passed to a customer service agent
         dispatcher.utter_message(text="I am passing you to a human...")
-        
-        # assume there's a function to call customer service
-        # pass the tracker so that the agent has a record of the conversation between the user
-        # and the bot for context
-        # call_customer_service(tracker)
      
         # pause the tracker so that the bot stops responding to user input
         return [UserUtteranceReverted()]
 
+
+class ActionMakeEnrollment(Action):
+
+    def name(self) -> Text:
+        return "action_make_enrollment"
+
+    def required_slots(tracker: Tracker) -> List[Text]:
+        """A list of requried slots that the form has to fill"""
+        return ["fill_name", "email", "gender", "degree_category"]
+    
+    def run(
+        self,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domainL: Dict[Text, Any],
+        ) -> List[Dict[Text, Any]]:
+
+        full_name = tracker.get_slot("full_name")
+        email = tracker.get_slot("email")
+        gender = tracker.get_slot("gender")
+        degree_category = tracker.get_slot("degree_category")
+
+        print(full_name, email, gender, degree_category)
+
+        dispatcher.utter_message(text="You have been successfully enrolled. You will see an email with other details.")
+
+        return []
 
 # class ActionTagFeedback(Action):
 #     """Tag a conversation in Rasa X as positive or negative feedback"""

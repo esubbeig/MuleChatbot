@@ -1,0 +1,52 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-company",
+      "2": "I-company",
+      "3": "L-company",
+      "4": "U-company",
+      "5": "B-email",
+      "6": "I-email",
+      "7": "L-email",
+      "8": "U-email",
+      "9": "B-full_name",
+      "10": "I-full_name",
+      "11": "L-full_name",
+      "12": "U-full_name",
+      "13": "B-language",
+      "14": "I-language",
+      "15": "L-language",
+      "16": "U-language",
+      "17": "B-name",
+      "18": "I-name",
+      "19": "L-name",
+      "20": "U-name",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-company": 1,
+      "I-company": 2,
+      "L-company": 3,
+      "U-company": 4,
+      "B-email": 5,
+      "I-email": 6,
+      "L-email": 7,
+      "U-email": 8,
+      "B-full_name": 9,
+      "I-full_name": 10,
+      "L-full_name": 11,
+      "U-full_name": 12,
+      "B-language": 13,
+      "I-language": 14,
+      "L-language": 15,
+      "U-language": 16,
+      "B-name": 17,
+      "I-name": 18,
+      "L-name": 19,
+      "U-name": 20,
+      "O": 0
+    },
+    "num_tags": 21
+  }
+]
